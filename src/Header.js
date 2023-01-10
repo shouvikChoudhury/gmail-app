@@ -13,7 +13,7 @@ import { authen } from './Firebase'
 
 const Header = () => {
     const user = useSelector(selectUser)
-    console.log(user.photoURL)
+
     return (
         <div className="header">
             <div className="header__left">
@@ -43,10 +43,9 @@ const Header = () => {
                 <IconButton>
                     <AppsIcon></AppsIcon>
                 </IconButton>
-                <IconButton>
-                    <Avatar onClick={() => authen.signOut()} src={user.photoURL}>
-                    </Avatar>
-                </IconButton>
+                <Avatar src={user.photoURL}>
+                </Avatar>
+                <a onClick={() => authen.signOut()} href="">Signout</a>
             </div>
 
         </div>

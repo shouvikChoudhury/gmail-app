@@ -14,19 +14,26 @@ import VideocamIcon from '@mui/icons-material/Videocam';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import { useDispatch } from 'react-redux';
 import { openCompose } from './features/mailslice'
+import { useNavigate } from 'react-router-dom'
+import "./css/sidebaroptions.css"
 
 const Sidebar = () => {
     const dispatch = useDispatch()
+    const history = useNavigate()
 
     return (
         <div className='sidebar'>
             <Button startIcon={<AddIcon />} className="compose__btn"
                 onClick={() => dispatch(openCompose())}>Compose</Button>
-
-            <Sidebaroptions Icon={<InboxIcon />} title={"Inbox"} number={106} isactive={true} />
+            <div className="sidebarOptions" onClick={() => history('/inbox')}>
+                <InboxIcon />
+                <h4>Inbox</h4>
+                <p>106</p>
+            </div>
+            <Sidebaroptions Icon={<InboxIcon />} title={"Inbox"} number={106} />
             <Sidebaroptions Icon={<StarRateIcon />} title={"Starred"} number={106} />
             <Sidebaroptions Icon={<WatchLaterIcon />} title={"Snoozed"} number={106} />
-            <Sidebaroptions Icon={<SendIcon />} title={"Sent"} number={106} />
+            <Sidebaroptions Icon={<SendIcon />} title={"Sent"} number={106} isactive={true} />
             <Sidebaroptions Icon={<DraftsIcon />} title={"Drafts"} number={106} />
             <Sidebaroptions Icon={<DeleteIcon />} title={"Trash"} number={106} />
             <Sidebaroptions Icon={<ExpandMoreIcon />} title={"More"} number={106} />

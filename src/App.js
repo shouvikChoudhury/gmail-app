@@ -15,6 +15,7 @@ import Login from './Login';
 import { selectUser, signIn, signOut } from './features/userslice';
 import { useEffect } from 'react';
 import { authen } from './Firebase';
+import Mailbox from './Mailbox';
 
 function App() {
   const isMsgOpen = useSelector(selectIsOpen)
@@ -42,7 +43,7 @@ function App() {
           <Sidebar />
           <Routes>
             <Route exact path='/' element={<Emaillist />} />
-
+            <Route exact path='/inbox' element={<Mailbox />} />
             <Route path='/mail' element={<Emaildetail />} />
           </Routes>
         </div>
