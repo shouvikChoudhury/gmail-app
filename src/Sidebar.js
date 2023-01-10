@@ -30,7 +30,6 @@ const Sidebar = () => {
                 <h4>Inbox</h4>
                 <p>106</p>
             </div>
-            <Sidebaroptions Icon={<InboxIcon />} title={"Inbox"} number={106} />
             <Sidebaroptions Icon={<StarRateIcon />} title={"Starred"} number={106} />
             <Sidebaroptions Icon={<WatchLaterIcon />} title={"Snoozed"} number={106} />
             <Sidebaroptions Icon={<SendIcon />} title={"Sent"} number={106} isactive={true} />
